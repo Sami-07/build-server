@@ -1,8 +1,9 @@
 import express from 'express';
 import deployRouter from './script.js';
-
+import cors from 'cors';
 const app = express();
 app.use(express.json()); // For parsing JSON request bodies
+app.use(cors());
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
